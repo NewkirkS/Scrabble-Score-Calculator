@@ -14,9 +14,43 @@
         function getScore($input_word)
         {
             $input_word = strtolower($input_word);
-            foreach($this->one_point as $letter) {
-                if ($input_word == $letter) {
-                    $this->word_score += 1;
+            $input_word_letters = str_split($input_word);
+
+            foreach($input_word_letters as $input_letter) {
+                foreach($this->one_point as $letter) {
+                    if ($input_letter == $letter) {
+                        $this->word_score += 1;
+                    }
+                }
+                foreach($this->two_points as $letter) {
+                    if ($input_letter == $letter) {
+                        $this->word_score += 2;
+                    }
+                }
+                foreach($this->three_points as $letter) {
+                    if ($input_letter == $letter) {
+                        $this->word_score += 3;
+                    }
+                }
+                foreach($this->four_points as $letter) {
+                    if ($input_letter == $letter) {
+                        $this->word_score += 4;
+                    }
+                }
+                foreach($this->five_points as $letter) {
+                    if ($input_letter == $letter) {
+                        $this->word_score += 5;
+                    }
+                }
+                foreach($this->eight_points as $letter) {
+                    if ($input_letter == $letter) {
+                        $this->word_score += 8;
+                    }
+                }
+                foreach($this->ten_points as $letter) {
+                    if ($input_letter == $letter) {
+                        $this->word_score += 10;
+                    }
                 }
             }
         }

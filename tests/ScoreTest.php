@@ -22,5 +22,17 @@
             // Assert
             $this->assertEquals(1, $test_Score->word_score);
         }
+
+        function test_getWordScore_()
+        {
+            //Arrange
+            $test_Score = new Score();
+            //Nonsense word to test each property of Score
+            $test_Word = "Admvkjq";
+            //Act
+            $test_Score->getScore($test_Word);
+            // Assert
+            $this->assertEquals(33, $test_Score->word_score);
+        }
     }
  ?>
